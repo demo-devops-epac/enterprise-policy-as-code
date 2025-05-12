@@ -1,6 +1,7 @@
 {
     "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
     "nodeName": "/root",
+    "parameterFile": "mcsb-parameterFile.csv",
     "assignment": {
         "name": "mcsb",
         "displayName": "Microsoft cloud security benchmark",
@@ -10,7 +11,8 @@
         "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8",
         "displayName": "Microsoft cloud security benchmark"
     },
-    // "enforcementMode": "DoNotEnforce",
+    "enforcementMode": "DoNotEnforce",
+    "parameterSelector": "dev",
     "scope": {
         "epac-dev": [
             "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
