@@ -1,14 +1,14 @@
 # This pipeline is used to deploy Policies, Initiative definitions and Assignments into Azure.
-name: EPAC Dev Workflow
+name: EPAC Tenant Workflow
 
 on:
-  push:
+  pull_request:
     branches:
-      - feature/**
+      - main
+    types:
+      - closed
     paths:
-      - "Definitions/**"
-      - ".github/**"
-  workflow_dispatch:
+      - 'Definitions/**'
 
 env:
   PAC_OUTPUT_FOLDER: ./Output
@@ -20,49 +20,35 @@ permissions:
 
 jobs:
   plan:
-    name: Plan epac-dev
+    name: Plan tenant
     uses: ./.github/workflows/plan.yml
     with:
-      pacEnvironmentSelector: epac-dev
+      pacEnvironmentSelector: epac-tenant
       planGitHubEnvironment: TENANT-PLAN
       PAC_OUTPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
 
   deployPolicy:
-    name: Deploy epac-dev Policy Changes
+    name: Deploy tenant Policy Changes
     needs: plan
-    if: needs.plan.outputs.deployPolicyChanges == 'yes'
+    if: needs.plan.outputs.deployPolicyChanges == 'yes' && github.ref == 'refs/heads/main'
     uses: ./.github/workflows/deploy-policy.yml
     with:
-      pacEnvironmentSelector: epac-dev
+      pacEnvironmentSelector: epac-tenant
       planGitHubEnvironment: TENANT-DEPLOY-POLICY
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
 
   deployRoles:
-    name: Deploy epac-dev Role Changes
-    needs: [plan, deployPolicy]
-    if: needs.plan.outputs.deployRoleChanges == 'yes'
+    name: Deploy tenant Role Changes
+    needs: plan
+    if: needs.plan.outputs.deployRoleChanges == 'yes' && github.ref == 'refs/heads/main'
     uses: ./.github/workflows/deploy-roles.yml
     with:
-      pacEnvironmentSelector: epac-dev
+      pacEnvironmentSelector: epac-tenant
       planGitHubEnvironment: TENANT-DEPLOY-ROLES
       PAC_INPUT_FOLDER: ./Output
-      PAC_DEFINITIONS_FOLDER: ./Definitions
-    secrets: inherit
-
-  tenantPlan:
-    name: Plan tenant
-    needs: [deployPolicy, deployRoles]
-    if: |
-      always()
-      && !contains(needs.*.result,'failure')
-    uses: ./.github/workflows/plan.yml
-    with:
-      pacEnvironmentSelector: epac-tenant
-      planGitHubEnvironment: TENANT-PLAN
-      PAC_OUTPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
