@@ -14,7 +14,10 @@
     "enforcementMode": "DoNotEnforce",
     "parameterSelector": "dev",
     "scope": {
-        "epac-dev": [
+        // "epac-dev": [
+        //     "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
+        // ]
+        "epac-tenant": [
             "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
         ]
     }
