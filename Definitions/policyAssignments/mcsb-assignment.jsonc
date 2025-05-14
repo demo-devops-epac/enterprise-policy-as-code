@@ -1,24 +1,57 @@
 {
     "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
-    "nodeName": "/root",
+    "nodeName": "/mscb/",
     "parameterFile": "mcsb-parameterFile.csv",
-    "assignment": {
-        "name": "mcsb",
-        "displayName": "Microsoft cloud security benchmark",
-        "description": "Adds the specified tag and value when any resource missing this tag is created or updated. Existing resources can be remediated by triggering a remediation task. If the tag exists with a different value it will not be changed. Does not modify tags on resource groups."
-    },
+    // "assignment": {
+    //     "name": "mcsb",
+    //     "displayName": "Microsoft cloud security benchmark",
+    //     "description": "Adds the specified tag and value when any resource missing this tag is created or updated. Existing resources can be remediated by triggering a remediation task. If the tag exists with a different value it will not be changed. Does not modify tags on resource groups."
+    // },
     "definitionEntry": {
         "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8",
         "displayName": "Microsoft cloud security benchmark"
     },
-    "enforcementMode": "DoNotEnforce",
-    "parameterSelector": "dev",
-    "scope": {
-        // "epac-dev": [
-        //     "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
-        // ]
-        "epac-tenant": [
-            "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
-        ]
-    }
+    // "enforcementMode": "DoNotEnforce",
+    // "parameterSelector": "dev",
+    // "scope": {
+    //     // "epac-dev": [
+    //     //     "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
+    //     // ]
+    //     "epac-tenant": [
+    //         "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
+    //     ]
+    // }
+    "children": [
+        {
+            "nodeName": "epac-dev",
+            "assignment": {
+                "name": "mcsb-dev",
+                "displayName": "[DEV] Microsoft cloud security benchmark",
+                "description": ""
+            },
+            "enforcementMode": "DoNotEnforce",
+            "parameterSelector": "dev",
+            "scope": {
+            "epac-dev": [
+                "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
+            ]
+
+            }
+        },
+        {
+            "nodeName": "epac-tenant",
+            "assignment": {
+                "name": "mcsb-tenant",
+                "displayName": "[TENANT] Microsoft cloud security benchmark",
+                "description": ""
+            },
+            "enforcementMode": "DoNotEnforce",
+            "parameterSelector": "prod",
+            "scope": {
+                "epac-tenant": [
+                    "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
+                ]
+            }
+        }
+    ]
 }
