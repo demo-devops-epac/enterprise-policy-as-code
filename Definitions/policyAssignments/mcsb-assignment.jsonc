@@ -39,7 +39,7 @@
       "nodeName": "epac-tenant",
       "assignment": {
         "name": "mcsb-tenant",
-        "displayName": "[TENANT] Microsoft cloud security benchmark",
+        "displayName": "[EPAC-TENANT] Microsoft cloud security benchmark",
         "description": ""
       },
       "enforcementMode": "DoNotEnforce",
