@@ -51,7 +51,7 @@ jobs:
       - name: Documentation
         uses: azure/powershell@v2
         with:
-          inlineScript: 'Scripts/Operations/Build-PolicyDocumentation.ps1 -Interactive -SuppressConfirmation'
+          inlineScript: 'Scripts/Operations/Build-PolicyDocumentation.ps1 -DefinitionsRootFolder "C:/PAC/Definitions" -OutputFolder "C:/PAC/Output" -Interactive $false'
           azPSVersion: "latest"
 
       - name: Upload Deployment Plan as Artifact
