@@ -56,7 +56,7 @@ jobs:
   documentation:
     name: Documentation
     needs: [plan, deployPolicy, deployRoles]
-    if:  ${{ !cancelled() }} && github.ref == 'refs/heads/main'
+    if: needs.plan.outputs.deployPolicyChanges == 'yes' && ${{ !cancelled() }} && github.ref == 'refs/heads/main'
     uses: ./.github/workflows/documentation.yml
     with:
       pacEnvironmentSelector: epac-tenant
