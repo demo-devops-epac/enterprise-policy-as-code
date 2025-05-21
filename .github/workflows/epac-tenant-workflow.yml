@@ -52,3 +52,15 @@ jobs:
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
+
+  documentation:
+    name: Documentation
+    needs: [plan, deployPolicy, deployRoles]
+    if:  ${{ !cancelled() }} && github.ref == 'refs/heads/main'
+    uses: ./.github/workflows/documentation.yml
+    with:
+      pacEnvironmentSelector: epac-tenant
+      planGitHubEnvironment: TENANT-PLAN
+      PAC_OUTPUT_FOLDER: ./Output
+      PAC_DEFINITIONS_FOLDER: ./Definitions
+    secrets: inherit
