@@ -51,8 +51,7 @@ jobs:
       - name: Documentation
         uses: azure/powershell@v2
         with:
-          inlineScript: |
-            Build-PolicyDocumentation
+          inlineScript: 'Scripts/Operations/Build-PolicyDocumentation.ps1 -PacEnvironmentSelector ${{ inputs.pacEnvironmentSelector }} -InformationAction Continue'
           azPSVersion: "latest"
 
       - name: Upload Deployment Plan as Artifact

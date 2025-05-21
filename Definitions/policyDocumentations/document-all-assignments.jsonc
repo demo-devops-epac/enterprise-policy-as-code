@@ -3,7 +3,7 @@
         "documentAllAssignments": [
             {
                 "enabled": true,
-                "pacEnvironment": "EPAC-PROD",
+                "pacEnvironment": "epac-tenant",
                 "fileNameStemPrefix": "Production",
                 "skipPolicyAssignments": [],
                 "skipPolicyDefinitions": [
