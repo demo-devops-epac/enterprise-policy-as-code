@@ -1,31 +1,41 @@
 {
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-documentation-schema.json",
     "documentAssignments": {
         "documentAllAssignments": [
             {
-                "enabled": true,
-                "pacEnvironment": "epac-tenant",
-                "fileNameStemPrefix": "Production",
+                "pacEnvironment": "tenant",
+                "fileNameStemPrefix": "Prod",
                 "skipPolicyAssignments": [],
                 "skipPolicyDefinitions": [
                     // "/providers/microsoft.authorization/policysetdefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8" // Azure Security Benchmark v3
                 ],
-                "overrideEnvironmentCategory": {}
+                "overrideEnvironmentCategory": {
+                }
             }
         ],
         "documentationSpecifications": [
             {
                 "fileNameStem": "Azure-Policy-Assignments",
                 "environmentCategories": [],
-                "title": "Current list of Azure Policies deployed",
-                "markdownAdoWiki": true,
-                "markdownAdoWikiConfig": [
-                    {
-                        "adoOrganization": "EPAC",
-                        "adoProject": "EPAC",
-                        "adoWiki": "EPAC"
-                    }
-                ]
+                "title": "Current list of Azure Policies deployed"
             }
         ]
-    }
+    },
+    "documentPolicySets": [
+        {
+            "pacEnvironment": "tenant",
+            "fileNameStem": "MCSB-parameters",
+            "title": "Policy Parameters",
+            "policySets": [
+                {
+                    "shortName": "MCSB",
+                    "id": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8" // MCSB
+                }
+            ],
+            "environmentColumnsInCsv": [
+                "dev",
+                "prod"
+            ]
+        }
+    ]
 }
