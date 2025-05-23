@@ -24,7 +24,7 @@
     "documentPolicySets": [
         {
             "pacEnvironment": "epac-tenant",
-            "fileNameStem": "MCSB-parameters",
+            "fileNameStem": "mcsb-parameterFile",
             "title": "Policy Parameters",
             "policySets": [
                 {
