@@ -3,7 +3,7 @@
     "documentAssignments": {
         "documentAllAssignments": [
             {
-                "pacEnvironment": "tenant",
+                "pacEnvironment": "epac-tenant",
                 "fileNameStemPrefix": "Prod",
                 "skipPolicyAssignments": [],
                 "skipPolicyDefinitions": [
@@ -23,7 +23,7 @@
     },
     "documentPolicySets": [
         {
-            "pacEnvironment": "tenant",
+            "pacEnvironment": "epac-tenant",
             "fileNameStem": "MCSB-parameters",
             "title": "Policy Parameters",
             "policySets": [
