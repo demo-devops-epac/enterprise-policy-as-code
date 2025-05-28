@@ -1,14 +1,7 @@
 # This pipeline is used to export non-compliance reports for Azure Policies in the EPAC environment to a CSV
 name: EPAC Export Non-Compliance Reports
 
-on:
-  pull_request:
-    branches:
-      - main
-    types:
-      - closed
-    paths:
-      - 'Definitions/**'
+on: workflow_dispatch
 
 env:
   PAC_OUTPUT_FOLDER: ./Output
