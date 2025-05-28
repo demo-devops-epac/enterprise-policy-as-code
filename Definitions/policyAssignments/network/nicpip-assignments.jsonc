@@ -1,0 +1,50 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
+    "nodeName": "/mscb/",
+    // "assignment": {
+    //     "name": "mcsb",
+    //     "displayName": "Microsoft cloud security benchmark",
+    //     "description": "Adds the specified tag and value when any resource missing this tag is created or updated. Existing resources can be remediated by triggering a remediation task. If the tag exists with a different value it will not be changed. Does not modify tags on resource groups."
+    // },
+    "definitionEntry": {
+      "policyId": "/providers/Microsoft.Authorization/policyDefinitions/83a86a26-fd1f-447c-b59d-e51f44264114"
+    },
+    // "enforcementMode": "DoNotEnforce",
+    // "parameterSelector": "dev",
+    // "scope": {
+    //     // "epac-dev": [
+    //     //     "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
+    //     // ]
+    //     "epac-tenant": [
+    //         "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
+    //     ]
+    // }
+    "children": [
+      // {
+      //   "nodeName": "epac-dev",
+      //   "assignment": {
+      //     "name": "mcsb-dev",
+      //     "displayName": "[DEV] Microsoft cloud security benchmark",
+      //     "description": ""
+      //   },
+      //   "enforcementMode": "DoNotEnforce",
+      //   "parameterSelector": "dev",
+      //   "scope": {
+      //     "epac-dev": ["/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"]
+      //   }
+      // },
+      {
+        "nodeName": "epac-tenant",
+        "assignment": {
+          "name": "nicpip-tenant",
+          "displayName": "[EPAC-TENANT] Network interfaces should not have public IPs",
+          "description": ""
+        },
+        "enforcementMode": "DoNotEnforce",
+        "scope": {
+          "epac-tenant": ["/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"]
+        }
+      }
+    ]
+  }
+  
