@@ -51,8 +51,7 @@ jobs:
       - name: Documentation
         uses: azure/powershell@v2
         with:
-          inlineScript: |
-            'Scripts/Operations/Export-NonComplianceReports.ps1 -Interactive $false'
+          inlineScript: 'Scripts/Operations/Export-NonComplianceReports.ps1 -Interactive $false'
           azPSVersion: "latest"
 
       - name: Upload Deployment Plan as Artifact
