@@ -1,2 +1,1 @@
 name,displayName,description,exemptionCategory,expiresOn,scope,policyAssignmentId,policyDefinitionReferenceIds,metadata,assignmentScopeValidation
-Exemption_00000000000001,My first exemption - 2025-01-27,Ticket001029,Mitigated,,/subscriptions/ea9ba7ba-66cf-4777-869f-b47eefcbd329/resourceGroups/AAAAAAAAAAAAA/providers/Microsoft.Storage/storageAccounts/AAAAAAAAAAAAA,/providers/microsoft.management/managementgroups/AAAAAAAAAAAAA/providers/microsoft.authorization/policyassignments/mcsb-dev,Deny-Storage-Shared-Key,,
