@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-set-definition-schema.json",
   "name": "c82ce8e4-c27f-444c-b945-b3e352c266f7",
   "properties": {
-    "displayName": "Azure Monitor Agent Configured with User Assigned Identity for Windows and Linux VMs [EPAC]",
+    "displayName": "Azure Monitor Agent Configured with User Assigned Identity for Windows and Linux VMs and Arc-Enabled VMs [EPAC]",
     "description": "Deploys the AMA extension to Windows and Linux virtual machines and Arc-enabled machines with user-assigned managed identity authentication. Azure Monitor Agent Deployment will occur on machines with supported OS images (or machines matching the provided list of images) in supported regions.",
     "metadata": {
       "category": "Monitoring",
