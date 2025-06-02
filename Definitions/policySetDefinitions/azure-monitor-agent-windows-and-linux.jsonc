@@ -179,7 +179,6 @@
       {
         "policyDefinitionReferenceId": "deployAMA_arcWindowsVM",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/94f686d6-9a24-4e19-91f1-de937dc171a4",
-        "definitionVersion": "2.4.0",
         "parameters": {
           "effect": {
             "value": "[parameters('effect')]"
@@ -189,7 +188,6 @@
       {
         "policyDefinitionReferenceId": "deployAMA_arcLinuxVM",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/845857af-0333-4c5d-bbbc-6076697da122",
-        "definitionVersion": "2.4.0",
         "parameters": {
           "effect": {
             "value": "[parameters('effect')]"
