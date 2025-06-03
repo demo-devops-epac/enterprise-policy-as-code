@@ -1,0 +1,23 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
+    "nodeName": "/root",
+    "definitionEntry": {
+        "displayName": "AMA Policy",
+        "policySetName": "ama-policy-set"
+    },
+    "assignment": {
+        "name": "ama-policy",
+        "displayName": "AMA policy",
+        "description": "AMA policy"
+    },
+    "enforcementMode": "DoNotEnforce",
+    "parameters": {},
+    "scope": {
+        // "epac-dev": [
+        //     "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
+        // ]
+        "epac-tenant": [
+            "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
+        ]
+    }
+}
