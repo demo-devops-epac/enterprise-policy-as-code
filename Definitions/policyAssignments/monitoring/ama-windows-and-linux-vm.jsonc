@@ -2,7 +2,7 @@
     "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
     "nodeName": "/monitoring/",
     "definitionEntry": {
-      "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/c82ce8e4-c27f-444c-b945-b3e352c266f7",
+      "policySetId": "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8/providers/Microsoft.Authorization/policySetDefinitions/c82ce8e4-c27f-444c-b945-b3e352c266f7",
       "displayName": "Install AMA for Windows and Linux VMs and Arc-Enabled VMs [EPAC]"
     },
     "children": [
