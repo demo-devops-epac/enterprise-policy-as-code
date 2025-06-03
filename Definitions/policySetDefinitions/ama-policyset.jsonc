@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-set-definition-schema.json",
+  "name": "ama-policy-set",
+  "properties": {
+    "displayName": "AMA policy set",
+    "description": "AMA policy set",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "AMA"
+    },
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "ARC-Linux",
+        "policyDefinitionName": "/providers/microsoft.authorization/policydefinitions/845857af-0333-4c5d-bbbc-6076697da122"
+      },
+      {
+        "policyDefinitionReferenceId": "Linux",
+        "policyDefinitionName": "/providers/microsoft.authorization/policydefinitions/1afdc4b6-581a-45fb-b630-f1e6051e3e7a"
+      },
+      {
+        "policyDefinitionReferenceId": "ARC-Windows",
+        "policyDefinitionName": "/providers/microsoft.authorization/policydefinitions/94f686d6-9a24-4e19-91f1-de937dc171a4"
+      },
+      {
+        "policyDefinitionReferenceId": "Windows",
+        "policyDefinitionName": "/providers/microsoft.authorization/policydefinitions/3672e6f7-a74d-4763-b138-fcf332042f8f"
+      }
+    ]
+  }
+}
