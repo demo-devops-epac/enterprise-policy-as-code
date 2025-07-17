@@ -1,0 +1,23 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
+    "nodeName": "/root",
+    "definitionEntry": {
+        "displayName": "Audit - FedRAMP High",
+        "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/d5264498-16f4-418a-b659-fa7ef418175f"
+    },
+    "assignment": {
+        "name": "audit-fedramp-high",
+        "displayName": "Audit - FedRAMP High",
+        "description": "Audit - FedRAMP High"
+    },
+    // "enforcementMode": "DoNotEnforce",
+    "parameters": {},
+    "scope": {
+        // "epac-dev": [
+        //     "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
+        // ]
+        "epac-tenant": [
+            "/subscriptions/b2c5ab64-1473-483f-a839-ef88914ac0b8"
+        ]
+    }
+}
